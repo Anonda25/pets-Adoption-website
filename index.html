@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <!-- daisyui link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fontFamily -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    'Lato': "Lato"
+
+                },
+                extend: {
+                    colors: {
+                        'primary': '#0E7A81',
+                        'color': '#0E7A81'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar w-11/12 mx-auto py-5 ">
+            <div class="navbar-start gap-2">
+                <img src="./images/logo.webp" alt="">
+                <h1 class="font-bold text-2xl">Peddy</h1>
+            </div>
+            <div class="navbar-center gap-5 ">
+                <a class="text-sm">Home</a>
+                <a class="text-sm">Shop</a>
+                <a class="text-sm">Contact</a>
+            </div>
+            <div class="navbar-end">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                    stroke="currentColor" class="size-7 text-gray-500 ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+            </div>
+        </div>
+        <!-- hero section -->
+        <section>
+            <div class="hero  ">
+                <div class="hero-content text-center ">
+                    <div class="max-w-5xl">
+                        <h1 class="font-Lato py-3">Bringing Families Together ❤️‍🔥</h1>
+                        <p class="text-5xl font-semibold font-Lato">Your Path to Adoption </p>
+                        <p class="text-5xl font-semibold font-Lato">Starts Here</p>
+                        <p class="py-6 w-3/4 mx-auto">
+                            It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its
+                            layout. The point of using Lorem Ipsum is that it has a.
+                        </p>
+                        <a href="#main-section">
+                            <button class="btn bg-primary text-white">View More</button>
+                        </a>
+                        <div class="lg:ml-20 w-full">
+                            <img src="./images/pet.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+
+    <main id="main-section" class="w-11/12 mx-auto ">
+        <div class="text-center pb-10">
+            <h1 class="text-3xl font-bold font-Lato pb-5">Adopt Your Best Frind</h1>
+            <p class="w-4/6 mx-auto">It is a long established fact that a reader will be distracted by the readable
+                content of a <br> page when looking at its
+                layout. The point of using Lorem Ipsum is that it has a.</p>
+        </div>
+        <!-- petbtn api -->
+        <div id="petBtn-container" class="my-10 flex justify-around ">
+
+
+        </div>
+
+        <div class="flex justify-between mb-10">
+            <div>
+                <p class="font-bold text-2xl">Best Deal For you</p>
+            </div>
+            <div>
+                <button onclick="loedAllCategory()" class="btn bg-primary text-white">Sort By Price </button>
+            </div>
+        </div>
+
+        <!-- testing perpas -->
+        <div class="flex justify-center ">
+            <span id="spiner" class="loading loading-bars loading-lg hidden"></span>
+        </div>
+        <!-- <div class="spinner" id="spinner"></div> -->
+        <div class="flex  gap-8 my-12">
+            <div id="post-container" class="grid lg:grid-cols-3 gap-5  ">
+
+            </div>
+            <div class="lg:w-4/12 w-3/4 ">
+                <div class="p-2 space-y-4 bg-[#F3F3F5] border h-full">
+
+                    <div class="grid lg:grid-cols-2 gap-5 " id="likedPets">
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="modal-container">
+
+
+        </div>
+
+        <div id="adoptModal-container">
+
+
+        </div>
+
+    </main>
+
+
+    <!-- footer section -->
+
+    <footer class="footer bg-black gap-20 text-white p-24 mt-10">
+        <nav>
+            <div class="flex justify-center items-center gap-2">
+                <img src="./images/logo.webp" alt="">
+                <div>
+                    <h6 class="text-xl text-gray-300 font-bold font-Lato">peaddy</h6>
+                </div>
+            </div>
+            <a class="link link-hover">Location:av.Washington 165, NYCA</a>
+            <a class="link link-hover">54003</a>
+            <a class="link link-hover">phone:+31 85 964 47 25</a>
+            <a class="link link-hover">Email:anandabiswas2025@gmail.com</a>
+            <a class="link link-hover">Openings hours:900.AM -5.00 PM</a>
+            <div class="flex gap-5">
+                <img src="https://img.icons8.com/?size=48&id=118497&format=png" alt="">
+                <i class="fa-brands fa-x-twitter text-4xl"></i>
+                <img src="https://img.icons8.com/?size=48&id=19318&format=png" alt="">
+                <img src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png" alt="">
+
+
+            </div>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Useful Links</h6>
+            <a class="link link-hover">Home</a>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Animals</a>
+            <a class="link link-hover">Foundation </a>
+            <a class="link link-hover">Contact</a>
+        </nav>
+
+        <form>
+            <h6 class="footer-title">Drop a Message</h6>
+            <fieldset class="form-control ">
+                <div class="">
+                    <input type="text" placeholder="Enter your Email" class="input input-bordered w-full mb-5 " />
+                </div>
+                <button class="btn bg-primary border-none text-white ">Subscribe</button>
+            </fieldset>
+        </form>
+    </footer>
+
+
+
+ 
+    <script src="app.js"></script>
+</body>
+
+</html>
